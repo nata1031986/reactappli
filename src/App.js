@@ -16,12 +16,7 @@ const App = () => {
     <div className="container">
 {handleComponent()}
 
-      <footer className="site-footer">
-       
-        <div className="footer-bottom">
-          <p>Coded © 2024 by Tasha. All rights reserved.</p>
-        </div>
-      </footer>
+     
     </div>
   );
 }
