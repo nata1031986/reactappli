@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
-
+import React, { useRef, useState, useContext } from 'react';
+import { MyContext } from './context';
 const Initial = () => {
     const textInput = useRef();
+    const context = useContext(MyContext);
     const [showNext, setShowNext] = useState(false);
     const [showError, setShowError] = useState(false);
 
@@ -20,8 +21,10 @@ const Initial = () => {
             return false;
         } else {
             setShowError(false);
-            alert('NEXT');
+           
         }
+
+        context.goTo(1);
     }
 
     return (
