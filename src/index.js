@@ -1,15 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Correctly imported for React 18+
-
+import ReactDOM from 'react-dom';
 import App from './App';
-import { MyProvider } from './context';
 
-// Correct way to use createRoot with the imported ReactDOM object
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import { MyProvider } from './context'
+
+
+ReactDOM.render(
   <React.StrictMode>
     <MyProvider>
       <App />
     </MyProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
