@@ -1,6 +1,9 @@
 import { useContext} from 'react';
 import { MyContext } from "./context";
 import React from "react";
+import 'animate.css';
+import { SwitchTransition, CSSTransition} from 'react-transition-group';
+import { ToastContainer } from 'react-toastify';
 
 import "./App.css";
 import Initial from "./components/initial";
@@ -18,11 +21,26 @@ const App = () => {
 
   console.log(context.state);
   return (
+    <div>
+
+    
     <div className="container">
-{handleComponent()}
+
+      <SwitchTransition mode="out-in ">
+<CSSTransition
+key={context.state.screen}
+timeout={5000}
+className="fade"
+>
+  {handleComponent()}
+</CSSTransition>
+      </SwitchTransition>
+      </div>
+<ToastContainer />
 
      
     </div>
+    
   );
 }
 
